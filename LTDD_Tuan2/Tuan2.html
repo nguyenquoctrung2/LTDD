@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Coding Challenge #1 part 2
+        console.log("Bài 1: ");
+        const calcAverage = (a, b, c) => {
+            return (a + b + c) / 3;
+        };
+        var DolphinsScore = calcAverage(44, 23, 71);
+        var koalasScore = calcAverage(65, 54, 49);
+
+        console.log(
+            `điểm Dolphins: ${DolphinsScore} và điểm Koalas: ${koalasScore}`
+        );
+
+        const checkWinner = (avgDolphins, avgKoalas) => {
+            avgDolphins >= 2 * avgKoalas
+                ? console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`)
+                : avgKoalas >= 2 * avgDolphins
+                    ? console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`)
+                    : console.log("Không team nào thắng");
+        };
+        checkWinner(DolphinsScore, koalasScore);
+        //Coding Challenge #2 part 2
+        console.log("Bài 2: ");
+        function calcTip(bill) {
+            if (bill >= 50 && bill <= 300) {
+                return bill * 0.15;
+            } else {
+                return bill * 0.20;
+            }
+        }
+        const bills = [125, 555, 44];
+        const tips = bills.map(calcTip);
+        const total = bills.map((bill, index) => bill + tips[index]);
+        console.log('Bills:', bills);
+        console.log('Tips:', tips);
+        console.log('Total:', total);
+        //Coding Challenge #3 part 2
+        console.log("Bài 3: ");
+        const mark = {
+            name: "Mark",
+            tall: 1.69,
+            weights: 78,
+            calcBMI: function () {
+                this.bmi = this.weights / (this.tall * this.tall);
+                return this.bmi;
+            },
+        };
+        const john = {
+            name: "John",
+            tall: 1.95,
+            weights: 92,
+            calcBMI: function () {
+                this.bmi = this.weights / (this.tall * this.tall);
+                return this.bmi;
+            },
+        };
+        console.log(
+            `BMI of ${mark.name} is ${mark.calcBMI()} and BMI of  ${john.name
+            } is ${john.calcBMI()}`
+        );
+        mark.bmi > john.bmi
+            ? console.log(
+                `${mark.name}'s BMI (${mark.bmi}) cao hơn ${john.name}'s BMI (${john.bmi})`
+            )
+            : mark.bmi < john.bmi
+                ?
+                console.log(
+                    `${john.name}'s BMI (${john.bmi}) cao hơn ${mark.name}'s BMI (${mark.bmi})`
+                )
+                : console.log("BMI bằng nhau");
+        //Coding Challenge #4 part 2
+        console.log("Bài 4: ");
+        function calcTip(bill) {
+            if (bill >= 50 && bill <= 300) {
+                return bill * 0.15;
+            } else {
+                return bill * 0.20;
+            }
+        }
+        const bills1 = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+        const tips1 = [];
+        const totals = [];
+        for (let i = 0; i < bills1.length; i++) {
+            const tip = calcTip(bills1[i]);
+            tips.push(tip);
+            totals.push(bills1[i] + tip);
+        }
+
+        console.log('Tips:', tips1);
+        console.log('Totals:', totals);
+        function calcAverage1(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum / arr.length;
+        }
+        const averageTotal = calcAverage1(totals);
+        console.log('Average Total:', averageTotal.toFixed(2));
+        //Developer Skills & Editor Setup
+        //Coding Challenge #1
+        console.log("Bai 1:");
+        function printForecast(arr) {
+            const forecastParts = [];
+            for (let i = 0; i < arr.length; i++) {
+                const forecast = `${arr[i]}oC in ${i + 1} days`;
+                forecastParts.push(forecast);
+            }
+            console.log('... ' + forecastParts.join(' ... ') + ' ...');
+        }
+        const testData1 = [17, 21, 23];
+        const testData2 = [12, 5, -5, 0, 4];
+        printForecast(testData1); 
+        printForecast(testData2); 
+        //JavaScript in the Browser: DOM and Events
+        //Coding Challenge #1
+        console.log("Bai 1:");
+        
+    </script>
+</body>
+
+</html>
